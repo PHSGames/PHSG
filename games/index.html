@@ -12,7 +12,7 @@
     header { padding: 20px 0; text-align: center; font-size: 32px; font-weight: bold; }
     input[type="text"] { width: 100%; padding: 10px; border-radius: 12px; border: none; margin-bottom: 20px; font-size: 16px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-    .card { background: #10172a; padding: 20px; border-radius: 18px; transition: transform .15s, box-shadow .15s; }
+    .card { background: #10172a; padding: 20px; border-radius: 18px; transition: transform .15s, box-shadow .15s; text-decoration: none; color: #e6ecff; display: block; }
     .card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,0.28); }
     .card h3 { margin-top:0; }
     .back { display:inline-block; margin: 20px 0; padding: 8px 14px; border-radius: 12px; background: #59cbe8; color: #0b1020; text-decoration: none; font-weight: bold; }
@@ -23,9 +23,9 @@
   <div class="container">
     <input type="text" id="search" placeholder="Search games...">
     <div class="grid" id="gameGrid">
-      <div class="card"><h3>Call of Duty Zombies</h3><p>Survive the waves of zombies in this classic shooter mode.</p></div>
-      <div class="card"><h3>Minecraft 1.8</h3><p>Play the 1.8 version of Minecraft with all classic features.</p></div>
-      <div class="card"><h3>Minecraft 1.12.1</h3><p>Play Minecraft 1.12.1 with updated blocks and mechanics.</p></div>
+      <a class="card" href="./callofduty-zombies.html"><h3>Call of Duty Zombies</h3><p>Survive the waves of zombies in this classic shooter mode.</p></a>
+      <a class="card" href="./minecraft-1-8.html"><h3>Minecraft 1.8</h3><p>Play the 1.8 version of Minecraft with all classic features.</p></a>
+      <a class="card" href="./minecraft-1-12-1.html"><h3>Minecraft 1.12.1</h3><p>Play Minecraft 1.12.1 with updated blocks and mechanics.</p></a>
     </div>
     <a class="back" href="../index.html">← Back to Home</a>
   </div>
