@@ -4,27 +4,72 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clever | Portal</title>
+  <title>Portland Games | Portal</title>
   <link rel="icon" href="docs/images.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="cssbuttons-io.css" />
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #e6ecff;
+      overflow-x: hidden;
+    }
+
+    /* Star background effect */
+    .stars, .shooting-star {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      background: transparent;
+    }
+
+    #top {
+      text-align: center;
+      padding: 20px;
+    }
+
     #box {
-      border: 2px dashed transparent;
+      background: #10172a;
+      border: 2px dashed #59cbe8;
       padding: 40px;
       text-align: center;
-      transition: border-color 0.3s;
-      border-radius: 10px;
-      max-width: 400px;
-      margin: 40px auto;
-      cursor: pointer;
+      border-radius: 18px;
+      max-width: 420px;
+      margin: 60px auto;
+      transition: all 0.3s ease;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.4);
     }
+
+    #box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.5);
+      border-color: #00d4ff;
+    }
+
     #box[drag] {
-      border-color: #4caf50;
-      background-color: #f0fff0;
+      border-color: #4cafef;
+      background-color: #0f1a36;
     }
+
     #input {
       display: none;
+    }
+
+    /* Style for upload button */
+    label.cssbuttons-io {
+      display: inline-block;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    /* Center game container when loaded */
+    #display {
+      margin: auto;
+      padding: 20px;
+      max-width: 95%;
     }
   </style>
 </head>
@@ -50,29 +95,28 @@
         Home
       </span>
     </button>
-
     <script>
-    document.getElementById('emulatorButton').addEventListener('click', function() {
-   window.location.href = 'NoahHuffine.github.io/index.html';
-            });
-    </script>           
+      document.getElementById('emulatorButton').addEventListener('click', function() {
+        window.location.href = 'NoahHuffine.github.io/index.html';
+      });
+    </script>
   </div>
 
-<div id="box">
-  <input type="file" id="input" />
-  <label for="input" class="cssbuttons-io">
-    <span>
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0h24v24H0z" fill="none"></path>
-        <path
-          d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.59L8.41 12 10 10.41 13 13.59l4.59-4.59L19 10l-6 6z"
-          fill="currentColor"
-        ></path>
-      </svg>
-      Click To Upload ROM
-    </span>
-  </label>
-</div>
+  <div id="box">
+    <input type="file" id="input" />
+    <label for="input" class="cssbuttons-io">
+      <span>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 14.59L8.41 12 10 10.41 13 13.59l4.59-4.59L19 10l-6 6z"
+            fill="currentColor"
+          ></path>
+        </svg>
+        Click To Upload ROM
+      </span>
+    </label>
+  </div>
 
   <script>
     const input = document.getElementById("input");
