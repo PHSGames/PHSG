@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Emulators - Portland Games</title>
-  <meta name="description" content="Choose between classic emulators or a PS1 emulator." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300d4ff'/><text x='50' y='58' font-size='48' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'>P</text></svg>">
-  <style>
-    body { margin:0; font-family: Arial, sans-serif; background: #0b1020; color: #e6ecff; }
-    header, .container { width: 90%; margin: auto; }
-    header { padding: 20px 0; text-align: center; font-size: 32px; font-weight: bold; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-    .card { background: #10172a; padding: 20px; border-radius: 18px; transition: transform .15s, box-shadow .15s; }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,0.28); }
-    .card h3 { margin-top:0; }
-    .cta { display:inline-block; margin-top: 15px; padding: 10px 16px; border-radius: 12px; background: #59cbe8; color: #0b1020; text-decoration: none; font-weight: bold; }
-    .back { display:inline-block; margin: 30px 0; padding: 8px 14px; border-radius: 12px; background: #7c6cff; color: #fff; text-decoration: none; font-weight: bold; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portland Games | Emulators</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cssbuttons-io.css" />
 </head>
 <body>
-  <header>Choose Your Emulator</header>
-  <div class="container">
-    <p style="text-align:center; color:#9fb0d6;">Select an emulator type and download it to get started.</p>
-    <div class="grid">
-      <div class="card">
-        <h3>Retro Emulator</h3>
-        <p>Supports NES, SNES, Sega Genesis, Sega Master System, and more classic systems.</p>
-        <a class="cta" href="https://www.retroarch.com/?page=platforms" target="_blank">Download Retro Emulator</a>
-      </div>
-      <div class="card">
-        <h3>PlayStation 1 Emulator</h3>
-        <p>Play PS1 classics with full controller support and save states.</p>
-        <a class="cta" href="https://www.epsxe.com/download.php" target="_blank">Download PS1 Emulator</a>
-      </div>
-    </div>
-    <a class="back" href="../index.html">← Back to Home</a>
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+  <!-- Top bar -->
+  <div id="top">
+    <button class="cssbuttons-io" id="homeButton">
+      <span>Home</span>
+    </button>
   </div>
+
+  <!-- Emulator selection -->
+  <div style="text-align:center; margin-top: 80px;">
+    <h1 style="color:white;">Choose Your Emulator</h1>
+    <div style="margin-top:40px;">
+      <button class="cssbuttons-io" id="retroButton">
+        <span>Nintendo & Sega</span>
+      </button>
+      <button class="cssbuttons-io" id="ps1Button" style="margin-left:20px;">
+        <span>PlayStation 1</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Home button
+    document.getElementById('homeButton').addEventListener('click', function() {
+      window.location.href = 'PHSG/index.html'; // adjust if home is a different file
+    });
+
+    // Emulator buttons
+    document.getElementById('retroButton').addEventListener('click', function() {
+      window.location.href = '/emulator/index.html'; // make this page in your repo
+    });
+
+    document.getElementById('ps1Button').addEventListener('click', function() {
+      window.location.href = '/PlayStation-main/PlayStation.htm'; // make this page in your repo
+    });
+  </script>
 </body>
 </html>
