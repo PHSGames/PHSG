@@ -3,50 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portland Games | Emulators</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="cssbuttons-io.css" />
+  <title>Emulators | Portland Games</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2300d4ff'/><text x='50' y='58' font-size='48' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'>P</text></svg>">
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background: #0b1020; color: #e6ecff; }
+    header, .container { width: 90%; margin: auto; }
+    header { padding: 20px 0; text-align: center; font-size: 32px; font-weight: bold; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+    .card { background: #10172a; padding: 20px; border-radius: 18px; text-align:center; transition: transform .15s, box-shadow .15s; cursor: pointer; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,0.28); }
+    .card h3 { margin: 0 0 10px 0; }
+    .card p { margin: 0 0 12px 0; color: #9fb0d6; font-size: 14px; }
+    .btn { display: inline-block; padding: 10px 16px; border-radius: 12px; background: #59cbe8; color: #0b1020; text-decoration: none; font-weight: bold; transition: transform .1s; }
+    .btn:hover { transform: translateY(-2px); }
+    .back { margin-top: 40px; display:inline-block; padding: 8px 14px; border-radius: 12px; background: #7c6cff; color:#fff; text-decoration:none; font-weight:bold; }
+  </style>
 </head>
 <body>
-  <div class="stars"></div>
-  <div class="shooting-star"></div>
-  <div class="shooting-star"></div>
-  <div class="shooting-star"></div>
+  <header>Emulators</header>
+  <div class="container">
+    <div class="grid">
+      <!-- Retro Emulator Page -->
+      <div class="card">
+        <h3>Retro Emulator</h3>
+        <p>Play Nintendo & Sega games.</p>
+        <a class="btn" href="./PHSG/PlayStation-main/PlayStation.htm">Go to Emulator</a>
+      </div>
 
-  <!-- Top bar -->
-  <div id="top">
-    <button class="cssbuttons-io" id="homeButton">
-      <span>Home</span>
-    </button>
-  </div>
+      <!-- PS1 Emulator Page -->
+      <div class="card">
+        <h3>PS1 Emulator</h3>
+        <p>Play classic PlayStation 1 games.</p>
+        <a class="btn" href="https://drive.google.com/drive/folders/1YeMXA9njLQlqJI79yHtYh2gb4SHpyn3_?usp=sharing" target="_blank">PS1 Games</a>
+      </div>
 
-  <!-- Emulator selection -->
-  <div style="text-align:center; margin-top: 80px;">
-    <h1 style="color:white;">Choose Your Emulator</h1>
-    <div style="margin-top:40px;">
-      <button class="cssbuttons-io" id="retroButton">
-        <span>Nintendo & Sega</span>
-      </button>
-      <button class="cssbuttons-io" id="ps1Button" style="margin-left:20px;">
-        <span>PlayStation 1</span>
-      </button>
+      <!-- Retro Game Downloads -->
+      <div class="card">
+        <h3>Download Retro Games</h3>
+        <p>Get ROMs for your Retro emulator.</p>
+        <a class="btn" href="https://github.com/vbaemulator/GBA-Roms" target="_blank">Retro Games</a>
+      </div>
+
+      <!-- PS1 Game Downloads -->
+      <div class="card">
+        <h3>Download PS1 Games</h3>
+        <p>Get ISO files for your PS1 emulator.</p>
+        <a class="btn" href="./downloads/ps1.zip" download>Download Games</a>
+      </div>
     </div>
+
+    <a class="back" href="../index.html">← Back to Home</a>
   </div>
-
-  <script>
-    // Home button
-    document.getElementById('homeButton').addEventListener('click', function() {
-      window.location.href = 'PHSG/index.html'; // adjust if home is a different file
-    });
-
-    // Emulator buttons
-    document.getElementById('retroButton').addEventListener('click', function() {
-      window.location.href = '/emulator/index.html'; // make this page in your repo
-    });
-
-    document.getElementById('ps1Button').addEventListener('click', function() {
-      window.location.href = '/PlayStation-main/PlayStation.htm'; // make this page in your repo
-    });
-  </script>
 </body>
 </html>
