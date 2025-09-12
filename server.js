@@ -1,21 +1,15 @@
 const express = require('express');
-const { createProxyMiddleware } = require('http-proxy-middleware');
 const path = require('path');
-
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Serve static files from /public
-app.use(express.static(path.join(__dirname, 'public')));
+const PORT = process.env.PORT || 10000;
 
-// Proxy route (example: /proxy)
-app.use('/proxy', createProxyMiddleware({
-  target: 'https://www.google.com',
-  changeOrigin: true,
-  pathRewrite: { '^/proxy': '' },
-  secure: false
-}));
+// Serve static files from the root of the repo
+app.use(express.static(path.join(__dirname)));
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Fallback to index.html for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
